@@ -3,12 +3,11 @@ package com.example.all4sportapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class Connexion extends AppCompatActivity {
 
     Button btncon;
 
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         this.btncon.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                Intent intent = new Intent(Connexion.this, SecondActivity.class);
                 startActivity(intent);
             }
         });
