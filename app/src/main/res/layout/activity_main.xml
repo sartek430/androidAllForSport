@@ -7,73 +7,103 @@
     android:background="#000000"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="115dp"
-        android:layout_height="60dp"
-        app:srcCompat="@drawable/all4sport_logo_index"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="70dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/mdp"
-        android:layout_width="288dp"
-        android:layout_height="44dp"
-        android:ems="10"
-        android:inputType="numberPassword"
-        android:text="MotDePasse"
-        android:textColor="#FBFBFB"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="343dp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="287dp"
-        android:layout_height="42dp"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="Example@gmail.com"
-        android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="244dp" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="115dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            app:srcCompat="@drawable/all4sport_logo_index" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="All4Sport"
-        android:textColorLink="@color/white"
-        android:textSize="16sp"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="138dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="All4Sport"
+            android:textColorLink="@color/white"
+            android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/btnConnexion"
-        android:layout_width="166dp"
-        android:layout_height="47dp"
-        android:backgroundTint="#FF9800"
-        android:text="Connexion"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="409dp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="52dp" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="E-Mail"
-        android:textColor="#FAF6F6"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="203dp" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="359dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="clip_horizontal"
+            android:text="Connexion"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp"
+            android:translationX="31sp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mot de passe"
-        android:textColor="#F3F3F3"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="298dp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="36dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="E-Mail"
+            android:textColor="#FF9800"
+            android:textSize="18sp"
+            android:translationX="34sp" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inputType="textEmailAddress"
+            android:text="Example@gmail.com"
+            android:textColor="#FFFFFF" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="36dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mot de passe"
+            android:textColor="#FF9800"
+            android:textSize="18sp"
+            android:translationX="34sp" />
+
+        <EditText
+            android:id="@+id/mdp"
+            android:layout_width="288dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:text="Mots de Passe"
+            android:textColor="#FFFFFF" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="36dp" />
+
+        <Button
+            android:id="@+id/btnconnexion"
+            android:layout_width="166dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:backgroundTint="#FF9800"
+            android:gravity="center"
+            android:text="Connexion" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
