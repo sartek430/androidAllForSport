@@ -4,6 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".SecondActivity">
 
+
+    <LinearLayout
+        android:layout_width="413dp"
+        android:layout_height="842dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="5dp">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="64dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="179dp"
+            android:layout_height="84dp"
+            android:translationX="85sp"
+            app:srcCompat="@drawable/all4sport_logo_index" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="34dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:text="Accueil"
+            android:textColor="#FFFFFF"
+            android:textSize="26sp"
+            android:translationX="32sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="34dp" />
+
+        <Spinner
+            android:id="@+id/ListeDeroulante"
+            android:layout_width="273dp"
+            android:layout_height="48dp"
+            android:animateLayoutChanges="true"
+            android:background="#FF9800"
+            android:dropDownSelector="@android:drawable/btn_dropdown"
+            android:translationX="32sp"
+            tools:visibility="visible" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

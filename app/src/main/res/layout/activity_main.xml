@@ -64,8 +64,8 @@
             android:layout_width="290dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:hint="Example@gmail.com"
             android:inputType="textEmailAddress"
-            android:text="Example@gmail.com"
             android:textColor="#FFFFFF" />
 
         <Space
@@ -87,8 +87,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:ems="10"
+            android:hint="Mots de Passe"
             android:inputType="textPassword"
-            android:text="Mots de Passe"
             android:textColor="#FFFFFF" />
 
         <Space
