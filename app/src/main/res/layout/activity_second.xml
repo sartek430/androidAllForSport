@@ -52,5 +52,6 @@
             android:dropDownSelector="@android:drawable/btn_dropdown"
             android:translationX="32sp"
             tools:visibility="visible" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
