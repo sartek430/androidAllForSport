@@ -22,7 +22,6 @@ public class SecondActivity extends AppCompatActivity {
 
                 List All4sportlist = new ArrayList();
                 All4sportlist.add("Accueil");
-                All4sportlist.add("Produit");
                 All4sportlist.add("Localisation");
                 All4sportlist.add("Caractéristique des produits");
                 All4sportlist.add("ajout des produits");
