@@ -5,36 +5,63 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class SecondActivity extends AppCompatActivity {
 
+    Button btnlocal;
+    Button btncaraprod;
+    Button btnajoutprod;
+    Button btnProduitEnstock;
     Spinner spinner;
+    Spinner ListeDeroulante;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-                spinner = (Spinner) findViewById(R.id.ListeDeroulante);
+        this.btnlocal = (Button) findViewById(R.id.btnLocalisation);
 
-                List All4sportlist = new ArrayList();
-                All4sportlist.add("Accueil");
-                All4sportlist.add("Localisation");
-                All4sportlist.add("Caractéristique des produits");
-                All4sportlist.add("ajout des produits");
-
-                ArrayAdapter adapter = new ArrayAdapter(
-                        this,
-                        android.R.layout.simple_spinner_item,
-                        All4sportlist
-                );
-
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spinner.setAdapter(adapter);
-
+        this.btnlocal.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this, TroisiemeActivity.class);
+                startActivity(intent);
             }
+        });
+        this.btncaraprod = (Button) findViewById(R.id.btnCaractéristiqueProduit);
+
+        this.btncaraprod.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this, QuatriemeActivity.class);
+                startActivity(intent);
+            }
+        });
+        this.btnajoutprod = (Button) findViewById(R.id.btnAjoutProduit);
+
+        this.btnajoutprod.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this, CinquiemeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        this.btnProduitEnstock = (Button) findViewById(R.id.btnProduitEnstock);
+
+        this.btnProduitEnstock.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this, SixiemeActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+}
 
