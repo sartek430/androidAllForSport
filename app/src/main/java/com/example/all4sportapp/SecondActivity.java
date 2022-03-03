@@ -10,48 +10,58 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class SecondActivity extends AppCompatActivity {
 
+    Button btnlocal;
+    Button btncaraprod;
+    Button btnajoutprod;
+    Button btnProduitEnstock;
     Spinner spinner;
+    Spinner ListeDeroulante;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-                spinner = (Spinner) findViewById(R.id.ListeDeroulante);
+        this.btnlocal = (Button) findViewById(R.id.btnLocalisation);
 
-                List All4sportlist = new ArrayList();
-                All4sportlist.add("Accueil");
-                All4sportlist.add("Localisation");
-                All4sportlist.add("Caractéristique des produits");
-                All4sportlist.add("ajout des produits");
+        this.btnlocal.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this, TroisiemeActivity.class);
+                startActivity(intent);
+            }
+        });
+        this.btncaraprod = (Button) findViewById(R.id.btnCaractéristiqueProduit);
 
-                ArrayAdapter adapter = new ArrayAdapter(
-                        this,
-                        android.R.layout.simple_spinner_item,
-                        All4sportlist
-                );
+        this.btncaraprod.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this, QuatriemeActivity.class);
+                startActivity(intent);
+            }
+        });
+        this.btnajoutprod = (Button) findViewById(R.id.btnAjoutProduit);
 
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spinner.setAdapter(adapter);
+        this.btnajoutprod.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this, CinquiemeActivity.class);
+                startActivity(intent);
+            }
+        });
 
-            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+        this.btnProduitEnstock = (Button) findViewById(R.id.btnProduitEnstock);
 
+        this.btnProduitEnstock.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this, SixiemeActivity.class);
+                startActivity(intent);
+            }
+        });
 
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> adapterView) {
-
-
-                }
-
-            });
     }
 }
 

@@ -43,15 +43,49 @@
             android:layout_width="match_parent"
             android:layout_height="34dp" />
 
-        <Spinner
-            android:id="@+id/ListeDeroulante"
-            android:layout_width="273dp"
-            android:layout_height="48dp"
-            android:animateLayoutChanges="true"
-            android:background="#FF9800"
-            android:dropDownSelector="@android:drawable/btn_dropdown"
-            android:translationX="32sp"
-            tools:visibility="visible" />
+        <Button
+            android:id="@+id/btnLocalisation"
+            android:layout_width="204dp"
+            android:layout_height="55dp"
+            android:backgroundTint="#FF9800"
+            android:text="Localisaion"
+            android:translationX="85sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="34dp" />
+
+        <Button
+            android:id="@+id/btnCaractéristiqueProduit"
+            android:layout_width="204dp"
+            android:layout_height="55dp"
+            android:backgroundTint="#FF9800"
+            android:text="Caractéristique des produits"
+            android:translationX="85sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="34dp" />
+
+        <Button
+            android:id="@+id/btnAjoutProduit"
+            android:layout_width="204dp"
+            android:layout_height="55dp"
+            android:backgroundTint="#FF9800"
+            android:text="ajout des produits"
+            android:translationX="85sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="34dp" />
+
+        <Button
+            android:id="@+id/btnProduitEnstock"
+            android:layout_width="208dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF9800"
+            android:text="Produit en stock"
+            android:translationX="85sp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
