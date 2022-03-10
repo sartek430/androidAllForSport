@@ -58,11 +58,10 @@ public class Connexion extends AppCompatActivity {
                 URL url;
 
                 try {
-                    url = new URL("http://192.168.43.2/all4sport/API/communication.php?email="+recupmail+"&mdp="+recupmdp);
+                    url = new URL("http://192.168.43.2/all4sport/API/connexion.php?email="+recupmail+"&mdp="+recupmdp);
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                     BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
                     line = rd.readLine();
-                    System.out.println(line);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
