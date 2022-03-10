@@ -29,10 +29,12 @@
         android:translationY="60sp" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="292dp"
-        android:layout_height="505dp"
-        android:translationX="35sp"
-        android:translationY="75sp"
-        app:srcCompat="@drawable/qr_code" />
+        android:id="@+id/imageView5"
+        android:layout_width="336dp"
+        android:layout_height="387dp"
+        android:translationX="10sp"
+        android:translationY="135sp"
+        app:srcCompat="@drawable/qr"
+ />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

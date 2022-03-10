@@ -48,7 +48,7 @@
             android:layout_width="204dp"
             android:layout_height="55dp"
             android:backgroundTint="#FF9800"
-            android:text="Localisaion"
+            android:text="Localisation"
             android:translationX="85sp" />
 
         <Space
