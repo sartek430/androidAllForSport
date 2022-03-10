@@ -56,18 +56,6 @@
             android:layout_height="34dp" />
 
         <Button
-            android:id="@+id/btnCaractéristiqueProduit"
-            android:layout_width="204dp"
-            android:layout_height="55dp"
-            android:backgroundTint="#FF9800"
-            android:text="Caractéristique des produits"
-            android:translationX="85sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="34dp" />
-
-        <Button
             android:id="@+id/btnAjoutProduit"
             android:layout_width="204dp"
             android:layout_height="55dp"

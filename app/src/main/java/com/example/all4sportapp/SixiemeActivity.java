@@ -15,7 +15,6 @@ import java.util.List;
 
 public class SixiemeActivity extends AppCompatActivity {
 
-    private ArrayList<Produit_stock> mesProduit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +24,7 @@ public class SixiemeActivity extends AppCompatActivity {
         URL url;
 
         try {
-            url = new URL("http://192.168.43.2/all4sport/API/connexion.php");
+            url = new URL("http://192.168.43.2/all4sport/API/produitStocke.php");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
             line = rd.readLine();
