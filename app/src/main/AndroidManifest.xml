@@ -24,9 +24,6 @@
             android:name=".CinquiemeActivity"
             android:exported="false" />
         <activity
-            android:name=".QuatriemeActivity"
-            android:exported="false" />
-        <activity
             android:name=".TroisiemeActivity"
             android:exported="false" />
         <activity

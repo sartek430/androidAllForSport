@@ -16,4 +16,10 @@
         android:textSize="34sp"
         android:translationX="45sp"
         tools:layout_editor_absoluteY="40dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="409dp"
+        android:layout_height="644dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="86dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
