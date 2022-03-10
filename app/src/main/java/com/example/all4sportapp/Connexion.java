@@ -2,17 +2,21 @@ package com.example.all4sportapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -23,7 +27,7 @@ public class Connexion extends AppCompatActivity {
     EditText email;
     EditText mdp;
 
-    String jsondata;
+    String line;
     String recupmail;
     String recupmdp;
 
@@ -40,28 +44,45 @@ public class Connexion extends AppCompatActivity {
 
             this.btncon = (Button) findViewById(R.id.btnconnexion);
 
+        Context context = getApplicationContext();
+
         this.btncon.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                     recupmail= email.getText().toString();
+                    recupmail=recupmail.replaceFirst("@", "%40");
                     recupmdp= mdp.getText().toString();
 
-                    //jsondata="{\"email\":\""+recupmail+"\",\"mdp\":\""+recupmdp+"\"}";
+
 
                 URL url;
 
                 try {
                     url = new URL("http://192.168.43.2/all4sport/API/communication.php?email="+recupmail+"&mdp="+recupmdp);
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                    InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                    BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                    line = rd.readLine();
+                    System.out.println(line);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
-                Intent intent = new Intent(Connexion.this, SecondActivity.class);
-                startActivity(intent);
+
+                if(line.equals("reussite")){
+
+                    Intent intent = new Intent(Connexion.this, SecondActivity.class);
+                    startActivity(intent);
+
+                }
+
+                if(line.equals("echec")){
+
+                    Toast toast = Toast.makeText(context, "Vérifiez votre login ou mot de passe", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
             }
         });
     }
