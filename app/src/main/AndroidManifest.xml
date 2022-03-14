@@ -20,16 +20,16 @@
         android:theme="@style/Theme.All4SportApp">
         ]]>
         <activity
-            android:name=".SixiemeActivity"
+            android:name=".Stock"
             android:exported="false" />
         <activity
-            android:name=".CinquiemeActivity"
+            android:name=".ProduitAjout"
             android:exported="false" />
         <activity
-            android:name=".TroisiemeActivity"
+            android:name=".Localisation"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".Menu"
             android:exported="false" />
         <activity
             android:name=".Connexion"
