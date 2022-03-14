@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-import com.example.all4sportapp.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -31,7 +30,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-public class TroisiemeActivity extends AppCompatActivity {
+public class Localisation extends AppCompatActivity {
 
     public static final int DEFAULT_UPDATE_INTERVAL = 30;
     public static final int FAST_UPDATEE_INTERVAL = 5;
@@ -162,7 +161,7 @@ public class TroisiemeActivity extends AppCompatActivity {
     }
 
     private void updateGPS(){
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(TroisiemeActivity.this);
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(Localisation.this);
 
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
             fusedLocationProviderClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
@@ -199,10 +198,11 @@ public class TroisiemeActivity extends AppCompatActivity {
             tv_speed.setText("Not available");
         }
 
-        Geocoder geocoder = new Geocoder(TroisiemeActivity.this);
+        Geocoder geocoder = new Geocoder(Localisation.this);
 
         try{
             List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+            //getLocality() => retourne la ville
             tv_address.setText(addresses.get(0).getLocality());
         }
         catch (Exception e){

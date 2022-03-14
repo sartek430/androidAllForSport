@@ -14,9 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-public class CinquiemeActivity extends AppCompatActivity {
+public class ProduitAjout extends AppCompatActivity {
     //initialise variable
     Button btScan;
+    Button btRefresh;
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -25,16 +26,18 @@ public class CinquiemeActivity extends AppCompatActivity {
 
         //Assign variable
         btScan = findViewById(R.id.bt_scan);
+        btRefresh = findViewById(R.id.button);
 
         btScan.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View view){
                 //Initialize intent integrator
                 IntentIntegrator intentIntegrator = new IntentIntegrator(
-                        CinquiemeActivity.this
+                        ProduitAjout.this
                 );
                 //Set prompt text
-                intentIntegrator.setPrompt("For flash use volume up key");
+                intentIntegrator.setPrompt("Pour utiliser le flash, appuyez sur le bouton volume haut");
                 //Set beep
                 intentIntegrator.setBeepEnabled(true);
                 //Locked orientation
@@ -45,7 +48,16 @@ public class CinquiemeActivity extends AppCompatActivity {
                 intentIntegrator.initiateScan();
             }
         });
-    }
+
+        btRefresh.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProduitAjout.this, Localisation.class);
+                startActivity(intent);
+            }
+        });
+        }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
@@ -58,8 +70,11 @@ public class CinquiemeActivity extends AppCompatActivity {
         if(intentResult.getContents() != null) {
             //When result content is not null
             //Initialize alert dialog
+
+
+
             AlertDialog.Builder builder = new AlertDialog.Builder(
-                    CinquiemeActivity.this
+                    ProduitAjout.this
             );
             //Set title
             builder.setTitle("Result");
@@ -78,7 +93,7 @@ public class CinquiemeActivity extends AppCompatActivity {
         }else{
             //When result content is null
             //Display toast
-            Toast.makeText(getApplicationContext(), "OOPS... You did not scan anything", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "OOPS... Vous n'avez rien scanné", Toast.LENGTH_SHORT).show();
         }
     }
 }

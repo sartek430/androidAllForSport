@@ -7,7 +7,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SixiemeActivity extends AppCompatActivity {
+public class Stock extends AppCompatActivity {
 
     private ArrayList<Produit_stock> mesProduit;
     @Override

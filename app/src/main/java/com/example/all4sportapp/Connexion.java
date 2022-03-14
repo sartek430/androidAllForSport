@@ -12,10 +12,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -72,7 +70,7 @@ public class Connexion extends AppCompatActivity {
 
                 if(line.equals("reussite")){
 
-                    Intent intent = new Intent(Connexion.this, SecondActivity.class);
+                    Intent intent = new Intent(Connexion.this, Menu.class);
                     startActivity(intent);
 
                 }
