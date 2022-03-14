@@ -28,6 +28,7 @@ public class SixiemeActivity extends AppCompatActivity {
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
             line = rd.readLine();
+            System.out.println(line);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
