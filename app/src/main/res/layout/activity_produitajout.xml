@@ -59,7 +59,7 @@
         android:inputType="textPersonName"
         android:text="Name"
         android:translationX="90sp"
-        android:translationY="500sp"
+        android:translationY="480sp"
         tools:layout_editor_absoluteX="16dp" />
 
     <EditText
