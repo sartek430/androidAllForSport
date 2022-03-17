@@ -19,7 +19,7 @@ public class ProduitAjout extends AppCompatActivity {
     Button btScan;
     Button btRefresh;
     Button btAjout;
-    int resultat;
+    String resultat;
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -72,8 +72,7 @@ public class ProduitAjout extends AppCompatActivity {
         //Check condition
         if(intentResult.getContents() != null) {
 
-            resultat= Integer.parseInt(intentResult.getContents());
-            System.out.println(resultat);
+            resultat= intentResult.getContents();
             //When result content is not null
             //Initialize alert dialog
 
