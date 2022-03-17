@@ -29,6 +29,14 @@ public class ProduitAjout extends AppCompatActivity {
         //Assign variable
         btScan = findViewById(R.id.bt_scan);
         btRefresh = findViewById(R.id.button);
+        btAjout = findViewById(R.id.button2);
+
+        btAjout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         btScan.setOnClickListener(new View.OnClickListener(){
 
