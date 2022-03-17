@@ -49,7 +49,7 @@ public class Localisation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_troisieme);
+        setContentView(R.layout.activity_localisation);
         tv_lat = findViewById(R.id.tv_lat);
         tv_lon = findViewById(R.id.tv_lon);
         tv_altitude = findViewById(R.id.tv_altitude);
