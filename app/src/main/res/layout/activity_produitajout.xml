@@ -13,22 +13,10 @@
         android:layout_height="wrap_content"
         android:text="Quantité :"
         android:textColor="#FF9800"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:translationX="150sp"
         android:translationY="450sp"
-        tools:layout_editor_absoluteX="16dp"/>
-
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Entrepot : "
-        android:textColor="@color/white"
-        android:translationX="150sp"
-        android:translationY="200sp"
-        tools:layout_editor_absoluteX="16dp"/>
+        tools:layout_editor_absoluteX="16dp" />
 
     <Button
         android:id="@+id/button"
@@ -51,28 +39,6 @@
         android:layout_centerInParent="true"
         android:text="Scan"/>
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:translationX="90sp"
-        android:translationY="480sp"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonNameEnt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:translationX="90sp"
-        android:translationY="250sp"
-        tools:layout_editor_absoluteX="16dp" />
-
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
@@ -92,6 +58,35 @@
         android:text="Ajouter"
         android:translationX="85sp"
         android:translationY="650sp"
+        tools:layout_editor_absoluteX="16dp"/>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entrepot :"
+        android:textColor="#FF9800"
+        android:textSize="20sp"
+        android:translationX="140sp"
+        android:translationY="210sp"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="134dp"
+        android:layout_height="27dp"
+        android:text="TextView"
+        android:translationX="50sp"
+        android:translationY="480sp"
+        tools:layout_editor_absoluteX="90dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="293dp"
+        android:layout_height="36dp"
+        android:text="TextView"
+        android:translationX="50sp"
+        android:translationY="240sp"
         tools:layout_editor_absoluteX="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
