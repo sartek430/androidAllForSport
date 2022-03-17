@@ -57,7 +57,7 @@
         android:backgroundTint="#FF9000"
         android:text="Ajouter"
         android:translationX="85sp"
-        android:translationY="650sp"
+        android:translationY="625sp"
         tools:layout_editor_absoluteX="16dp"/>
 
     <TextView
