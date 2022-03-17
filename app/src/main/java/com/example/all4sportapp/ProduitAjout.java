@@ -18,6 +18,7 @@ public class ProduitAjout extends AppCompatActivity {
     //initialise variable
     Button btScan;
     Button btRefresh;
+    Button btAjout;
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -59,8 +60,14 @@ public class ProduitAjout extends AppCompatActivity {
         });
         }
 
+        int resultatTest;
+
+    public int getResultatTest() {
+        return resultatTest;
+    }
+
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
         super.onActivityResult(requestCode, resultCode, data);
         //Initialize intent result
         IntentResult intentResult = IntentIntegrator.parseActivityResult(
@@ -70,8 +77,6 @@ public class ProduitAjout extends AppCompatActivity {
         if(intentResult.getContents() != null) {
             //When result content is not null
             //Initialize alert dialog
-
-
 
             AlertDialog.Builder builder = new AlertDialog.Builder(
                     ProduitAjout.this
@@ -95,5 +100,8 @@ public class ProduitAjout extends AppCompatActivity {
             //Display toast
             Toast.makeText(getApplicationContext(), "OOPS... Vous n'avez rien scanné", Toast.LENGTH_SHORT).show();
         }
+        resultatTest = Integer.valueOf(intentResult.getContents());
+        getResultatTest();
     }
+
 }
