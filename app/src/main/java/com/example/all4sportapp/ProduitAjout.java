@@ -43,6 +43,7 @@ public class ProduitAjout extends AppCompatActivity {
         btRefresh = findViewById(R.id.button);
         btAjout = findViewById(R.id.button2);
         editAjouter = findViewById(R.id.editTextTextPersonName);
+        Context context = getApplicationContext();
 
         btScan.setOnClickListener(new View.OnClickListener(){
 
@@ -77,18 +78,16 @@ public class ProduitAjout extends AppCompatActivity {
         btAjout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Context context = getApplicationContext();
+
                 try {
                     String value= editAjouter.getText().toString();
                     int finalValue=Integer.parseInt(value);
-
                     quantite = finalValue;
                 }catch (Exception e){
                     e.printStackTrace();
                     Toast toast = Toast.makeText(context, "Veuillez mettre un nombre", Toast.LENGTH_LONG);
                     toast.show();
                 }
-
 
                 URL url;
 
@@ -102,6 +101,9 @@ public class ProduitAjout extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
+                Toast toast = Toast.makeText(context, line, Toast.LENGTH_LONG);
+                toast.show();
 
             }
         });
