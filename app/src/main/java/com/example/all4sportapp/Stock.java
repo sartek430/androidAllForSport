@@ -58,7 +58,7 @@ public class Stock extends AppCompatActivity {
             articles = new JSONArray(line);
             for (int i = 0; i< articles.length(); i++) {
                 String nom_produit = articles.getJSONObject(i).getString("nom");
-                String quantite = articles.getJSONObject(i).getString("quantite");
+                String quantite = articles.getJSONObject(i).getString("quantite_stock");
 
                 produits.add(new Produit(nom_produit, quantite));
 
