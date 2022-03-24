@@ -18,8 +18,9 @@
         tools:layout_editor_absoluteY="40dp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="409dp"
-        android:layout_height="644dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="86dp" />
+        android:id="@+id/recyclerview"
+        android:layout_width="415dp"
+        android:layout_height="620dp"
+        android:translationY="90sp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
