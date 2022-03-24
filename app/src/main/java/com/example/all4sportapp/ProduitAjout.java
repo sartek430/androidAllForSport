@@ -1,10 +1,14 @@
 package com.example.all4sportapp;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -28,6 +32,16 @@ public class ProduitAjout extends AppCompatActivity {
     Button btAjout;
     String resultat;
     String line;
+    int quantite;
+    EditText editAjouter;
+    EditText editEtagere;
+    EditText editSection;
+    EditText editRangee;
+    EditText editModule;
+    int etagere;
+    int section;
+
+
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -38,6 +52,13 @@ public class ProduitAjout extends AppCompatActivity {
         btScan = findViewById(R.id.bt_scan);
         btRefresh = findViewById(R.id.button);
         btAjout = findViewById(R.id.button2);
+        editAjouter = findViewById(R.id.editTextTextPersonName);
+        editEtagere = findViewById(R.id.editTextTextPersonName2);
+        editSection = findViewById(R.id.editTextTextPersonName6);
+        editRangee = findViewById(R.id.editTextTextPersonName7);
+        editModule = findViewById(R.id.editTextTextPersonName8);
+
+
 
         btScan.setOnClickListener(new View.OnClickListener(){
 
@@ -73,10 +94,34 @@ public class ProduitAjout extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String rangee = editRangee.getText().toString();
+                String module = editModule.getText().toString();
+
+                Context context = getApplicationContext();
+
+                try {
+                    String value= editAjouter.getText().toString();
+                    int finalValue=Integer.parseInt(value);
+                    String value1= editEtagere.getText().toString();
+                    int finalValue1=Integer.parseInt(value1);
+                    String value2= editSection.getText().toString();
+                    int finalValue2=Integer.parseInt(value2);
+
+                    quantite = finalValue;
+                    etagere = finalValue1;
+                    section = finalValue2;
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                    Toast toast = Toast.makeText(context, "Veuillez mettre un nombre", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
+
                 URL url;
 
                 try {
-                    url = new URL("http://192.168.43.2/all4sport/API/gestionStock.php?reference="+resultat+"&entrepot="+resultat+"&quantite="+resultat);
+                    url = new URL("http://192.168.43.2/all4sport/API/gestionStock.php?reference="+resultat+"&entrepot="+resultat+"&quantite="+quantite  );
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                     BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
                     line = rd.readLine();
