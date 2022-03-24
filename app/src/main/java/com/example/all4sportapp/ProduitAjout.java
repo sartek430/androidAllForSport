@@ -38,6 +38,8 @@ public class ProduitAjout extends AppCompatActivity {
     EditText editSection;
     EditText editRangee;
     EditText editModule;
+    int etagere;
+    int section;
 
 
     @Override
@@ -91,20 +93,23 @@ public class ProduitAjout extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String etagere = editEtagere.getText().toString();
-                String section = editSection.getText().toString();
                 String rangee = editRangee.getText().toString();
                 String module = editModule.getText().toString();
-
-
 
                 Context context = getApplicationContext();
 
                 try {
                     String value= editAjouter.getText().toString();
                     int finalValue=Integer.parseInt(value);
+                    String value1= editEtagere.getText().toString();
+                    int finalValue1=Integer.parseInt(value1);
+                    String value2= editSection.getText().toString();
+                    int finalValue2=Integer.parseInt(value2);
 
                     quantite = finalValue;
+                    etagere = finalValue1;
+                    section = finalValue2;
+
                 }catch (Exception e){
                     e.printStackTrace();
                     Toast toast = Toast.makeText(context, "Veuillez mettre un nombre", Toast.LENGTH_LONG);
