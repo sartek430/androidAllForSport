@@ -42,6 +42,7 @@ public class ProduitAjout extends AppCompatActivity {
     int section;
 
 
+
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
