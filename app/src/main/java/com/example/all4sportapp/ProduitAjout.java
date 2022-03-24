@@ -1,10 +1,12 @@
 package com.example.all4sportapp;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -28,6 +30,8 @@ public class ProduitAjout extends AppCompatActivity {
     Button btAjout;
     String resultat;
     String line;
+    int quantite;
+    EditText editAjouter;
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -38,6 +42,7 @@ public class ProduitAjout extends AppCompatActivity {
         btScan = findViewById(R.id.bt_scan);
         btRefresh = findViewById(R.id.button);
         btAjout = findViewById(R.id.button2);
+        editAjouter = findViewById(R.id.editTextTextPersonName);
 
         btScan.setOnClickListener(new View.OnClickListener(){
 
@@ -72,11 +77,23 @@ public class ProduitAjout extends AppCompatActivity {
         btAjout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Context context = getApplicationContext();
+                try {
+                    String value= editAjouter.getText().toString();
+                    int finalValue=Integer.parseInt(value);
+
+                    quantite = finalValue;
+                }catch (Exception e){
+                    e.printStackTrace();
+                    Toast toast = Toast.makeText(context, "Veuillez mettre un nombre", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
 
                 URL url;
 
                 try {
-                    url = new URL("http://192.168.43.2/all4sport/API/gestionStock.php?reference="+resultat+"&entrepot="+resultat+"&quantite="+resultat);
+                    url = new URL("http://192.168.43.2/all4sport/API/gestionStock.php?reference="+resultat+"&entrepot="+resultat+"&quantite="+quantite);
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                     BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
                     line = rd.readLine();
