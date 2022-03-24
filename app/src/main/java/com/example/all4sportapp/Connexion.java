@@ -42,7 +42,7 @@ public class Connexion extends AppCompatActivity {
 
             this.btncon = (Button) findViewById(R.id.btnconnexion);
 
-        Context context = getApplicationContext();
+            Context context = getApplicationContext();
 
         this.btncon.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
