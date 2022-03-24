@@ -121,7 +121,7 @@ public class ProduitAjout extends AppCompatActivity {
                 URL url;
 
                 try {
-                    url = new URL("http://192.168.43.2/all4sport/API/gestionStock.php?reference="+resultat+"&entrepot="+resultat+"&quantite="+quantite);
+                    url = new URL("http://192.168.43.2/all4sport/API/gestionStock.php?reference="+resultat+"&entrepot="+resultat+"&quantite="+quantite  );
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                     BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
                     line = rd.readLine();
