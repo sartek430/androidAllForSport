@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -32,6 +34,11 @@ public class ProduitAjout extends AppCompatActivity {
     String line;
     int quantite;
     EditText editAjouter;
+    EditText editEtagere;
+    EditText editSection;
+    EditText editRangee;
+    EditText editModule;
+
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -43,6 +50,12 @@ public class ProduitAjout extends AppCompatActivity {
         btRefresh = findViewById(R.id.button);
         btAjout = findViewById(R.id.button2);
         editAjouter = findViewById(R.id.editTextTextPersonName);
+        editEtagere = findViewById(R.id.editTextTextPersonName2);
+        editSection = findViewById(R.id.editTextTextPersonName6);
+        editRangee = findViewById(R.id.editTextTextPersonName7);
+        editModule = findViewById(R.id.editTextTextPersonName8);
+
+
 
         btScan.setOnClickListener(new View.OnClickListener(){
 
@@ -77,7 +90,16 @@ public class ProduitAjout extends AppCompatActivity {
         btAjout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String etagere = editEtagere.getText().toString();
+                String section = editSection.getText().toString();
+                String rangee = editRangee.getText().toString();
+                String module = editModule.getText().toString();
+
+
+
                 Context context = getApplicationContext();
+
                 try {
                     String value= editAjouter.getText().toString();
                     int finalValue=Integer.parseInt(value);
