@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.All4SportApp">
         <activity
-            android:name=".stock_epuise"
+            android:name=".Stock_epuise"
             android:exported="false" />
         <activity
             android:name=".Stock"

@@ -43,7 +43,7 @@ public class Stock extends AppCompatActivity {
         String line = "";
         try {
             url = new URL("http://192.168.43.2/all4sport/API/produitStocke.php");
-                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
             line = rd.readLine();
         } catch (MalformedURLException e) {
