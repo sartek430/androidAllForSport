@@ -31,12 +31,6 @@ public class Menu extends AppCompatActivity {
             }
         });
 
-        //this.btncaraprod.setOnClickListener(new View.OnClickListener() {
-           // public void onClick(View v) {
-              //  Intent intent = new Intent(SecondActivity.this, QuatriemeActivity.class);
-                //startActivity(intent);
-            //}
-        //});
         this.btnajoutprod = (Button) findViewById(R.id.btnAjoutProduit);
 
         this.btnajoutprod.setOnClickListener(new View.OnClickListener() {
