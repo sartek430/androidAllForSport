@@ -11,11 +11,8 @@ import android.widget.Spinner;
 public class Menu extends AppCompatActivity {
 
     Button btnlocal;
-    Button btncaraprod;
     Button btnajoutprod;
     Button btnProduitEnstock;
-    Spinner spinner;
-    Spinner ListeDeroulante;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

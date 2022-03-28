@@ -51,7 +51,6 @@ public class Stock extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //Connexion BDD
 
         JSONArray articles = new JSONArray();
         try {
@@ -71,4 +70,5 @@ public class Stock extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new MyAdapter(getApplicationContext(), produits));
-    }}
+    }
+}
