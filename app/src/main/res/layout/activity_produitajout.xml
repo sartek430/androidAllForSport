@@ -151,4 +151,15 @@
         tools:layout_editor_absoluteX="64dp"
         tools:layout_editor_absoluteY="280dp" />
 
+    <TextView
+        android:id="@+id/tv_affichage_ville"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="170dp"
+        android:text="VILLE ACTUELLE"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

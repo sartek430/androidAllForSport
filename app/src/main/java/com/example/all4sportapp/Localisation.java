@@ -38,6 +38,7 @@ public class Localisation extends AppCompatActivity {
 
     TextView tv_lat, tv_lon, tv_altitude, tv_accuracy, tv_speed, tv_sensor, tv_updates, tv_address;
     Button btn_showMap;
+    String localisation;
 
     Switch sw_locationupdates, sw_gps;
 
@@ -202,11 +203,15 @@ public class Localisation extends AppCompatActivity {
 
         try{
             List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
-            //getLocality() => retourne la ville
             tv_address.setText(addresses.get(0).getLocality());
         }
         catch (Exception e){
             tv_address.setText("Unable to get street adress");
         }
+    }
+
+    public String getAdresse(){
+        localisation= (String) tv_address.getText();
+        return localisation;
     }
 }
