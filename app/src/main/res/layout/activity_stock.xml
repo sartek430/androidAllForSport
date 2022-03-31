@@ -15,12 +15,33 @@
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         android:translationX="45sp"
-        tools:layout_editor_absoluteY="40dp" />
+        android:translationY="55dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="415dp"
-        android:layout_height="620dp"
-        android:translationY="90sp" />
+        android:layout_width="410dp"
+        android:layout_height="530dp"
+        android:translationY="190sp"/>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom produit"
+        android:textColor="#FFFFFF"
+        android:textSize="19sp"
+        android:translationX="145dp"
+        android:translationY="140dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantite"
+        android:textColor="#FFFFFF"
+        android:textSize="19sp"
+        android:translationX="5dp"
+        android:translationY="140dp"
+       />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

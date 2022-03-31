@@ -40,6 +40,7 @@ public class ProduitAjout extends AppCompatActivity {
     EditText editModule;
     int etagere;
     int section;
+    String villeActuelle;
 
 
 
@@ -57,6 +58,12 @@ public class ProduitAjout extends AppCompatActivity {
         editSection = findViewById(R.id.editTextTextPersonName6);
         editRangee = findViewById(R.id.editTextTextPersonName7);
         editModule = findViewById(R.id.editTextTextPersonName8);
+
+        Bundle bundle = getIntent().getExtras();
+
+        villeActuelle = (String) getIntent().getSerializableExtra("villeActuelle");
+        System.out.println(villeActuelle);
+
 
 
 
@@ -121,7 +128,7 @@ public class ProduitAjout extends AppCompatActivity {
                 URL url;
 
                 try {
-                    url = new URL("http://192.168.43.2/all4sport/API/gestionStock.php?reference="+resultat+"&entrepot="+resultat+"&quantite="+quantite  );
+                    url = new URL("http://192.168.238.93/all4sport/API/gestionStock.php?reference="+resultat+"&entrepot="+resultat+"&quantite="+quantite  );
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                     BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
                     line = rd.readLine();

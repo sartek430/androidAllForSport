@@ -42,7 +42,7 @@ public class Stock extends AppCompatActivity {
         URL url;
         String line = "";
         try {
-            url = new URL("http://192.168.43.2/all4sport/API/produitStocke.php");
+            url = new URL("http://192.168.238.93/all4sport-master-api/API/produitStocke.php");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
             line = rd.readLine();

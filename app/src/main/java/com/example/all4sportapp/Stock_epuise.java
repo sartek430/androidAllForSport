@@ -32,10 +32,11 @@ public class Stock_epuise extends AppCompatActivity {
         URL url;
 
         try {
-            url = new URL("http://192.168.43.2/all4sport/API/produitEpuise.php");
+            url = new URL("http://192.168.238.93/all4sport-master-api/API/produitEpuise.php");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
             line = rd.readLine();
+            System.out.println(line);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();

@@ -13,6 +13,7 @@ public class Menu extends AppCompatActivity {
     Button btnlocal;
     Button btnajoutprod;
     Button btnProduitEnstock;
+    Button btnProduitEnstock2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,14 @@ public class Menu extends AppCompatActivity {
             }
         });
 
+        this.btnProduitEnstock2 = (Button) findViewById(R.id.btnProduitEnstock2);
+
+        this.btnProduitEnstock2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Menu.this, Stock_epuise.class);
+                startActivity(intent);
+            }
+        });
     }
 }
 

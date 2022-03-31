@@ -75,5 +75,17 @@
             android:text="Produit en stock"
             android:translationX="85sp" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="34dp" />
+
+        <Button
+            android:id="@+id/btnProduitEnstock2"
+            android:layout_width="202dp"
+            android:layout_height="58dp"
+            android:backgroundTint="#FF9800"
+            android:text="Produit épuisé"
+            android:translationX="85sp" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
