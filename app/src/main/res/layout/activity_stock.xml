@@ -7,6 +7,15 @@
     android:background="#000000"
     tools:context=".Stock">
 
+    <Button
+        android:id="@+id/menu"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#FF9000"
+        android:text="Menu"
+        android:translationX="265sp"
+        android:translationY="10sp" />
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"

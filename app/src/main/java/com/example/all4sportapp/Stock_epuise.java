@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,10 +23,21 @@ import java.util.List;
 
 public class Stock_epuise extends AppCompatActivity {
 
+    Button menu3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stock_epuise);
+
+        this.menu3 = (Button) findViewById(R.id.menu3);
+
+        this.menu3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Stock_epuise.this, Menu.class);
+                startActivity(intent);
+            }
+        });
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         List<Produit> produits_epuise = new ArrayList<Produit>();

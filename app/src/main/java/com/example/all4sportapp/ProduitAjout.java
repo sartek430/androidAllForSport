@@ -41,6 +41,7 @@ public class ProduitAjout extends AppCompatActivity {
     int etagere;
     int section;
     String villeActuelle;
+    Button Menu;
 
 
 
@@ -48,6 +49,15 @@ public class ProduitAjout extends AppCompatActivity {
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produitajout);
+
+        this.Menu = (Button) findViewById(R.id.Menu);
+
+        this.Menu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(ProduitAjout.this, Menu.class);
+                startActivity(intent);
+            }
+        });
 
         //Assign variable
         btScan = findViewById(R.id.bt_scan);

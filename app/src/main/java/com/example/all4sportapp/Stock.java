@@ -25,12 +25,21 @@ import java.util.List;
 
 public class Stock extends AppCompatActivity {
 
-
+Button menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stock);
+        this.menu = (Button) findViewById(R.id.menu);
+
+        this.menu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Stock.this, Menu.class);
+                startActivity(intent);
+            }
+        });
+
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 

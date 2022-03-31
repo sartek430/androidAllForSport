@@ -7,6 +7,15 @@
     android:background="#000000"
     tools:context=".Localisation">
 
+    <Button
+        android:id="@+id/menu2"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#FF9000"
+        android:text="Menu"
+        android:translationX="145sp"
+        android:translationY="580sp" />
+
     <TextView
         android:id="@+id/textView7"
         android:layout_width="217dp"

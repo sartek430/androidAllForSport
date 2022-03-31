@@ -7,6 +7,15 @@
     android:background="#000000"
     tools:context=".Stock">
 
+    <Button
+        android:id="@+id/menu3"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#FF9000"
+        android:text="Menu"
+        android:translationX="265sp"
+        android:translationY="10sp" />
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
@@ -15,12 +24,12 @@
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         android:translationX="60sp"
-        tools:layout_editor_absoluteY="40dp" />
+        android:translationY="70dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="415dp"
-        android:layout_height="620dp"
-        android:translationY="90sp" />
+        android:layout_width="408dp"
+        android:layout_height="580dp"
+        android:translationY="140sp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
