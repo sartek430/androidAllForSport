@@ -25,12 +25,21 @@ import java.util.List;
 
 public class Stock extends AppCompatActivity {
 
-
+Button menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stock);
+        this.menu = (Button) findViewById(R.id.menu);
+
+        this.menu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Stock.this, Menu.class);
+                startActivity(intent);
+            }
+        });
+
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
@@ -42,7 +51,7 @@ public class Stock extends AppCompatActivity {
         URL url;
         String line = "";
         try {
-            url = new URL("http://192.168.43.32/all4sport/API/produitStocke.php");
+            url = new URL("http://192.168.238.93/all4sport-master-api/API/produitStocke.php");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
             line = rd.readLine();
@@ -51,7 +60,6 @@ public class Stock extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //Connexion BDD
 
         JSONArray articles = new JSONArray();
         try {
@@ -71,4 +79,5 @@ public class Stock extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new MyAdapter(getApplicationContext(), produits));
-    }}
+    }
+}

@@ -1,9 +1,13 @@
 package com.example.all4sportapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -19,41 +23,56 @@ import java.util.List;
 
 public class Stock_epuise extends AppCompatActivity {
 
+    Button menu3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stock_epuise);
 
+        this.menu3 = (Button) findViewById(R.id.menu3);
+
+        this.menu3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Stock_epuise.this, Menu.class);
+                startActivity(intent);
+            }
+        });
+
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
-        List<Produit_epuise> produits_epuise = new ArrayList<Produit_epuise>();
+        List<Produit> produits_epuise = new ArrayList<Produit>();
 
         String line = "";
         URL url;
 
         try {
-            url = new URL("http://192.168.43.2/all4sport/API/produitEpuise.php");
+            url = new URL("http://192.168.238.93/all4sport-master-api/API/produitEpuise.php");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
             line = rd.readLine();
+            System.out.println(line);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         JSONArray article_epuises = new JSONArray();
         try {
             article_epuises = new JSONArray(line);
             for (int i = 0; i< article_epuises.length(); i++) {
                 String nomProduit_epuise = article_epuises.getJSONObject(i).getString("nom");
-                String quantite_epuise = article_epuises.getJSONObject(i).getString("quantite_stock");
 
-                produits_epuise.add(new Produit_epuise(nomProduit_epuise, quantite_epuise));
+                produits_epuise.add(new Produit(nomProduit_epuise, "0"));
 
             }
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new MyAdapter(getApplicationContext(), produits_epuise));
     }
 }

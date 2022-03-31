@@ -8,22 +8,25 @@
     <TextView
         android:id="@+id/quantite"
         android:layout_width="wrap_content"
-        android:layout_height="46dp"
-        android:layout_centerVertical="true"
+        android:layout_height="63dp"
         android:layout_marginRight="10dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
         android:text="Quantité :\n X"
         android:textAlignment="center"
+        android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/article"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_width="252dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="32dp"
         android:layout_toEndOf="@id/quantite"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="20dp"
+        android:textSize="15dp"
         tools:text="ID" />
 
     <LinearLayout
@@ -31,7 +34,7 @@
         android:layout_height="2dp"
         android:layout_below="@id/quantite"
         android:layout_marginTop="10dp"
-        android:background="#DAD8D8"/>
+        android:background="#DAD8D8" />
 
 
 </RelativeLayout>

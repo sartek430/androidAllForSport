@@ -46,6 +46,7 @@ public class Localisation extends AppCompatActivity {
     LocationRequest locationRequest;
     LocationCallback locationCallBack;
     FusedLocationProviderClient fusedLocationProviderClient;
+    Button menu2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,15 @@ public class Localisation extends AppCompatActivity {
             public void onClick(View view) {
                 Uri uri = Uri.parse("https://www.google.fr/maps");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+
+        this.menu2 = (Button) findViewById(R.id.menu2);
+
+        this.menu2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Localisation.this, Menu.class);
                 startActivity(intent);
             }
         });
